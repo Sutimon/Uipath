@@ -1,0 +1,16 @@
+C:\Users\perscholas_student\Documents\Case Study\EmailProcessing\OrderProcessing.Lib\bin\Release\OrderProcessing.Lib.dll
+C:\Users\perscholas_student\Documents\Case Study\EmailProcessing\OrderProcessing.Lib\bin\Release\OrderProcessing.Lib.pdb
+C:\Users\perscholas_student\Documents\Case Study\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.csproj.CoreCompileInputs.cache
+C:\Users\perscholas_student\Documents\Case Study\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.dll
+C:\Users\perscholas_student\Documents\Case Study\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.pdb
+C:\Users\perscholas_student\Desktop\caseStudy\brow\EmailProcessing\OrderProcessing.Lib\bin\Release\OrderProcessing.Lib.dll
+C:\Users\perscholas_student\Desktop\caseStudy\brow\EmailProcessing\OrderProcessing.Lib\bin\Release\OrderProcessing.Lib.pdb
+C:\Users\perscholas_student\Desktop\caseStudy\brow\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.csproj.CoreCompileInputs.cache
+C:\Users\perscholas_student\Desktop\caseStudy\brow\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.dll
+C:\Users\perscholas_student\Desktop\caseStudy\brow\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.pdb
+C:\Users\perscholas_student\Desktop\caseStudy\brow\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.csprojAssemblyReference.cache
+C:\Users\perscholas_student\Desktop\OK\CaseStudy\EmailProcessing\OrderProcessing.Lib\bin\Release\OrderProcessing.Lib.dll
+C:\Users\perscholas_student\Desktop\OK\CaseStudy\EmailProcessing\OrderProcessing.Lib\bin\Release\OrderProcessing.Lib.pdb
+C:\Users\perscholas_student\Desktop\OK\CaseStudy\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.csproj.CoreCompileInputs.cache
+C:\Users\perscholas_student\Desktop\OK\CaseStudy\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.dll
+C:\Users\perscholas_student\Desktop\OK\CaseStudy\EmailProcessing\OrderProcessing.Lib\obj\Release\OrderProcessing.Lib.pdb
