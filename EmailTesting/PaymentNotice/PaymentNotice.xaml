@@ -1,0 +1,215 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="PaymentNotice" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:ol="clr-namespace:OrderProcessing.Lib;assembly=OrderProcessing.Lib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="email" Type="InArgument(snm:MailMessage)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>398,2346</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>PaymentNotice_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>OrderProcessing.Lib</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>OrderProcessing.Lib</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="PaymentNotice" sap:VirtualizedContainerService.HintSize="358,2266" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="messages" />
+      <Variable x:TypeArguments="ol:PaymentReceived" Name="paymentReceived" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="336,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="ol:PaymentReceived">[paymentReceived]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="ol:PaymentReceived">[PaymentReceived.FromEmail(email)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Sequence DisplayName="Edit Manager Program" sap:VirtualizedContainerService.HintSize="336,2042" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'mstsc.exe 10.0.0.24'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+        <ui:ClickImage.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:ClickImage.CursorPosition>
+        <ui:ClickImage.Image>
+          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFcAAAAVCAYAAAAzWHILAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVFhH7ZRBjsIwDEXnaMxtOifhGpyBI7BnzRY2LNggukCqyCiDm7r9cZ20gUYj0X7pL6gSx342/vr+OdnFebzAzega7vrwsCGZ8029uHjYg3BJxlR2WxzVAJ/oVXGx+/LXmvJu12/U3YN73Llg/ADrerj0Ln+iV8XNHo2rOxtc8mpXNV/nsx7+Da6cZhYmgbFw2vGuWzPyd1cUiZuJ8Yx52P2mXyyeIUko2zO/Q/f9GnDlyTgsjqfVH8qJPHot0HfsqlSbwOZur0rn8TtBDzUKdS37xXoxIzEQGsMNSWskyr2p154EV1NsJfBdfMSfFPdNnpNgeMoxF+1sLCZ9wwHgmAiXa/GGABoRWgv4L8Z/5PpQtW9LD8LFNcEOTXA79SIRDw4X5wGD4rBoaOpQczTxfa3Zoe9BuJAXCXMOObpzpeUDUtpKqROEe+qZBLgkijEKbgNnCrgyB1YMchJc/Hu1kGBK8W43ac/HmzMexAnhxgokTwWXjTWTME/0aLi9aWwe1YC78/3VgbvqXbjymyxwe+5ivgwX83oC9fMfbsLLk6tJ3sXzsrAp4GoNZGHMNLhdXqwanphWFEJHp+1c8TAVH1oL9XkEJbo7BVy21nQsOAUuWTYtBFfek67h5nIM/BycDW5oMufkyeHi35o1x6klZ4c7V7DkrDt37l7gZvPJ/gEYfe5SGO0gPgAAAABJRU5ErkJggg==" />
+        </ui:ClickImage.Image>
+        <ui:ClickImage.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='10.0.0.24 - Remote Desktop Connection' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:ClickImage.Target>
+      </ui:ClickImage>
+      <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'mstsc.exe 10.0.0.24'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+        <ui:ClickImage.CursorPosition>
+          <ui:CursorPosition OffsetX="50" Position="Center">
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:ClickImage.CursorPosition>
+        <ui:ClickImage.Image>
+          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAASCAYAAAAJ88NbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI0SURBVFhH7ZY7jsIwEIZZpUapUS6BUu4dEBcgx6AMPVRb0dGFOhS7xZ4glHCDcAVooPFsxo947DheWCS28S9ZCDuxZ755OAMI6lWA41GA41GA49GA7ReQRBFEdGQ7uLATbKcxpKsj3BiTjz+m03YKMd+r/33+jHF+BrvL4+cxtodFksLqeJMzz2vAqhxG4yUcrn8D4FNdTGA4K+HcA2e/SBoYMyjPeh3twWBlu4ucuU+MVZCPxrA8XOXM8/o3OCJjTTBKHFC6guPtfpteDgcjq8qKO9MY/LUhZWCVjFmiGXys++Hg3uPlAa4ucOgoKRFhxxrmiS47JstelSNft+CIzJT2ENjKl/VcrGOW8mctf7xwqnzUOsCf40bI/3UBk1invwCTtZmA69NmPXLAUY7NyrOcMcVYDcUkbvdGOxBKu7fqhwRuxUFoOMJZfXaVk0BLXzJyPp7xZtkq4Ci6clCjDDgWRFxXB7oyoa+shPPDX+DodWoHip22DXirV5GyEs3ZzCIezHeRPb6EoHoscxxwxLo7E3w9h4K1ZTvXgYNZatliwOHwzICLIUvytXCY01me2j1wcL++pms734HDS9q88gUQlTkIyt3sUS+Hg1kSy8igVPTsOqbCPkAbJUr0rtQoiQ4c7jz2Px0M0XxptmHPcX9juXx5viF74KDqgtxkjdOfG/93Dsp4R6a+HXH7HJS40fR7WfltXOW8b5HbDIfRkB2+dBqy/A1yKMDxKMDxKMDpFcAPEJn/1CcLfyIAAAAASUVORK5CYII=" />
+        </ui:ClickImage.Image>
+        <ui:ClickImage.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='10.0.0.24 - Remote Desktop Connection' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:ClickImage.Target>
+      </ui:ClickImage>
+      <Delay Duration="[Timespan. FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,96" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[paymentReceived.OrderNumber.ToString()]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:TypeInto>
+      <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'mstsc.exe 10.0.0.24'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+        <ui:ClickImage.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:ClickImage.CursorPosition>
+        <ui:ClickImage.Image>
+          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAASCAYAAAD4+JjWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD7SURBVFhH7ZZRDoMgDEC3NFyIeB25i3gR1HNwE/AqnYgR2HDsY5o5+/E+aKtJX1r0Zq1FYhsSVIAEFSBBBQ4RZEyHAgAhhgkcjMnXa4l8yftnGYohX7s3BwlSWANHqT9r0ugGOQjsMwJjec+5PTihoO3cHvyEoHQFp3WSQYIxGiX3K2Y6kawpE0P2fd/kQEGhsbi59Y7pvTwnpOGuJghy5zV/tQlyU8G4RB01HEu4vCAtOYLokxgJinOqRqjadILmu4YE+dzccPjPcULkJOR+PUHpJQ2swnYR5psOcamChBdBU0zVvvZvvmJnhgQV2F3QOI7Z+FmgCXqLxQfznHgTaTYyAQAAAABJRU5ErkJggg==" />
+        </ui:ClickImage.Image>
+        <ui:ClickImage.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='10.0.0.24 - Remote Desktop Connection' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:ClickImage.Target>
+      </ui:ClickImage>
+      <Delay Duration="[Timespan. FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+      <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double Click Image" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+        <ui:ClickImage.CursorPosition>
+          <ui:CursorPosition OffsetX="150" Position="Center">
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:ClickImage.CursorPosition>
+        <ui:ClickImage.Image>
+          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+        </ui:ClickImage.Image>
+        <ui:ClickImage.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='10.0.0.24 - Remote Desktop Connection' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:ClickImage.Target>
+      </ui:ClickImage>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,96" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[paymentReceived.OrderDate.ToString(&quot;MM-dd-yyyy&quot;)]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <Delay Duration="[Timespan. FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+        <ui:SendHotkey.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:SendHotkey.Target>
+      </ui:SendHotkey>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,96" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="False" Text="[paymentReceived.Amount.ToString(&quot;F2&quot;)]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <Delay Duration="[Timespan. FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+        <ui:SendHotkey.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:SendHotkey.Target>
+      </ui:SendHotkey>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBetweenKeys="1" DisplayName="Type Into" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,96" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[paymentReceived.CheckNumber.ToString()+ &quot;[k(enter)]&quot;]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <Delay Duration="[Timespan. FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+      <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'mstsc.exe 10.0.0.24'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+        <ui:ClickImage.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:ClickImage.CursorPosition>
+        <ui:ClickImage.Image>
+          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF8AAAASCAYAAAA9igJHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO5SURBVFhH7ZZbS1RRFMdtLiDe6aajfgBNRRzpQhKVOlqQpgkVvdRLYE4RYiaFPQjRS2PlBdJ66AYFMUEXEpHCMMTXMjK1M/NVVnudc9Zx7XP2GRkdmYR5+DNzzl5777V+e621T1YsFoOM0qMM/DQqAz+NysBPo5zwV+bhUSgP/KefwO+VuDy2Sa1o7+FqYB/c+bisHHeV6ZPX611T9QDM/NLU9ttEDvir0etQ3nYRzpd2wORiioPTotBTXAGDH/6ox90k4D9szoXOsSXr3btwYHsdwLcxCBW2S0wd8DEoDBJ/a/pmYHX1rzS+KaUQPq51pbQz9QmyRdJmR6Ep/xRM/FzjKcHHtoABoUE8GoZAzQ0ps74Pn4C8zkmYfhCCHL9HL3+pPdHpTo1AY1GWPu7xt60BYvBpLd7a8F1O7U1nNqvgi72aC9qMYMR/2o/7hFVsjwHfFXuMQ8MEq+p/Bvdac6VWpleVudaZcTlR+BivPNrrxd1WBxsc2+PzW/PwvabZ4KPR3q5RA4gAZe/PcxFj4bq+KaMiBJTIyWyrQvB0jxcKCMwpfQ4BZfDRFuFZB2P2dQkwyaXt+NqNw5sduWz5ieseza81nhUx4LzKAcP/aE8J7PBXGZVo7oFwzo4v6raS7+Zcnmz4TLFjsu72+iw26AcmBB1e4sxXBM8Xx2d0JrdjwtocxStEtYEEgMHHMWl9nsk0l8TA8OzhfthtKWj0mSoMKztcUmntj/DpIMg2m1UKTxD7XBpvCvbr9shhl+0OwvV5YrrDt5UuibcNFXzugBK+gHE/VGc4bYPPDw5bTn3/tAVCkglUWRVCOphy2Xey5QClyhZjdvjoz86ux9a4FM86fNzg0/oJ4at6sCqL7PCp17nBp89LFXyqitufvkKkJShllaQE8KX1VbYsBqw0vkZS8IWv3YEOObGYNgx/Wfvh2m952eL/Im+l1UMp43iWYc/nrQoDpt7sgG+uHwwGnQfPlSjz7e3KzFBui2DKK/ZDfVC+zJOCL54xFrd2t/HM//IUyjzqfouT6ALT4bcPwlBLgVV21uVr2uIGt4bEV4t540vf4gr4OMcOy6FE8IUQCvnjqz4Hlw4WyLa4b1mW5CsqWfjoB35g0F4ofuEmgo/P5Kfya2c9qdoOl+p019NG5iQtxaH/D0ovfJFJ2O7sGZlqSa1PMZ4uJQV//nkYGvteu4LSFl5Bd2MvvGWl56aFl9fgWMMhaOh9s2Xg458j0HLkABy+MAxzS1tYWRtQPB5PDn5GqVQM/gF3R5xfXewgnQAAAABJRU5ErkJggg==" />
+        </ui:ClickImage.Image>
+        <ui:ClickImage.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='10.0.0.24 - Remote Desktop Connection' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:ClickImage.Target>
+      </ui:ClickImage>
+      <Delay Duration="[Timespan. FromMilliseconds(500)]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+    </Sequence>
+  </Sequence>
+</Activity>
